@@ -35,3 +35,31 @@ class TextModel:
         with torch.no_grad():
             last_hidden_states = self.model(input_ids)[0]
         return last_hidden_states.mean(dim=1).numpy()
+if __name__ == "__main__":
+    texts = [
+        "This is a sentence about natural language processing.",
+        "Another sentence about NLP and its applications.",
+        "Yet another sentence that talks about the field of NLP."
+    ]
+    tm = TextModel()
+
+    preprocessed_texts = tm.preprocess_texts(texts)
+
+    ngrams = tm.create_ngrams(preprocessed_texts)
+
+    tm.train_LDA(ngrams)
+
+    topic_distributions = tm.get_topic_distributions(ngrams)
+
+    encoded_texts = tm.encode_texts(texts)
+
+    cosine_similarities = tm.get_cosine_similarities(encoded_texts)
+
+    print("N-grams:")
+    print(ngrams)
+    print("\nTopic Distributions:")
+    print(topic_distributions)
+    print("\nEncoded Texts:")
+    print(encoded_texts)
+    print("\nCosine Similarities:")
+    print(cosine_similarities)
