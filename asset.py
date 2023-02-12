@@ -409,6 +409,3 @@ class DataPreparation:
     def plot_circular(self):
         self.circular_bar("Unique_cat", "counts")
         plt.show()
-
-if __name__ == "__main__":
-    print("On espère avoir une super bonne note !)
