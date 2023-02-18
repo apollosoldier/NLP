@@ -210,7 +210,7 @@ class DataPreparation:
             allowed_postags = list(set(POS_map.keys()).difference(set(forbidden_postags)))
         if not spacy_model:
             print("Loading spacy model")
-            spacy_model = spacy.load("en_core_web_md")
+            spacy_model = spacy.load("en_core_web_lg")
         print("Beginning lemmatization process")
         total_steps = len(texts)
 
