@@ -1,3 +1,9 @@
+"""
+@Author : Mohamed Traoré
+February 2023
+"""
+
+
 import lux
 import numpy as np
 import pandas as pd
